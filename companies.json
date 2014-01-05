@@ -1,0 +1,146 @@
+{
+  "1": {
+    "name": "Astra Agro Lestari",
+    "sector": "Agronomical engineering service",
+    "map": "location1.png",
+    "address": "Nirwana Sunter Asri Tahap II Complex Block A No. 69<br>Jl. Paradise Raya No. 22 Sunter Agung<br>Jakarta Utara 14350"
+  },
+  "2": {
+    "name": "Mahaka Media",
+    "sector": "Air compressor part and service",
+    "map": "location2.png",
+    "address": "Puri Mutiara Complex Block A No. 23-25<br>Jl. Griya Utama, Sunter Agung<br>Jakarta Utara 14350"
+  },
+  "3": {
+    "name": "Asuransi Bina Dana Arta",
+    "sector": "Boiler spareparts and maintenance",
+    "map": "location3.png",
+    "address": "Plaza Pasific Office Centre Block A-3 No. 53-55<br>Jl. Boulevard Barat Raya, Kelapa Gading<br>Jakarta Utara 14240"
+  },
+  "4": {
+    "name": "ABM Investama",
+    "sector": "Building and civil construction, Construction equipment, Readymix and precast concrete",
+    "map": "location4.png",
+    "address": "Kota Harapan Indah Complex Block SN 5.6 No. 18<br>Jakarta Utara 17131"
+  },
+  "5": {
+    "name": "Ace Hardware Indonesia",
+    "sector": "Catering service for ship and aircraft",
+    "map": "location1.png",
+    "address": "Jl. Bandengan Utara No. 27-29 Block A-15<br>Pekojan – Tambora<br>Jakarta Barat 11240"
+  },
+  "6": {
+    "name": "Akasha Wira International",
+    "sector": "Computer hardware and maintenance service, Printing equipment, toner",
+    "map": "location1.png",
+    "address": "Ruko Roxy Mas Complex Block D-5 No. 17<br>Jl. KH. Hasyim Ashari No. 125<br>Jakarta Pusat 10150"
+  },
+  "7": {
+    "name": "Adira Dinamika Multi Finance",
+    "sector": "Consulting, Contracting and Engineering Services",
+    "map": "location2.png",
+    "address": "Graha Praba Samanta<br>Jl. Daan Mogot Km. 12 No. 9<br>Cengkareng, Jakarta Barat 11730"
+  },
+  "8": {
+    "name": "Asuransi Harta Aman Pratama",
+    "sector": "Finance and business consultant",
+    "map": "location3.png",
+    "address": "Jl. Kejayaan No. 24<br>Jakarta Barat 11140"
+  },
+  "9": {
+    "name": "Akbar Indomakmur Stimec",
+    "sector": "Food, nutraceutical, Pharmaceutical ingredient",
+    "map": "location4.png",
+    "address": "Grogol Permai Office Complex Block F No. 7-8<br>Jl. Prof. Dr. Latumenten No. 19, Grogol<br>Jakarta Barat 11460"
+  },
+  "10": {
+    "name": "Majapahit Securities",
+    "sector": "General supplier, Tools, electric control equipment, hardware",
+    "map": "location1.png",
+    "address": "Santiago Complex, Jl. KH. Moh Mansyur No. 202-E<br>Jakarta Barat 11210"
+  },
+  "11": {
+    "name": "Alkindo Naratama",
+    "sector": "Human resource consultant, Outsourcing and recruitment",
+    "map": "location1.png",
+    "address": "Jl. Karang Anyar F No. 10/35<br>Jakarta Pusat 10740"
+  },
+  "12": {
+    "name": "Alakasa Industrindo",
+    "sector": "Land surveyor, Mapping and topogrammetry service, Marking off land registrar",
+    "map": "location2.png",
+    "address": "Kota Harapan Indah Complex Block SN 5.6 No. 18<br>Jakarta Utara 17131"
+  },
+  "13": {
+    "name": "Alumindo Light Metal Industry",
+    "sector": "Consulting, Contracting and Engineering Services",
+    "map": "location2.png",
+    "address": "Graha Praba Samanta<br>Jl. Daan Mogot Km. 12 No. 9<br>Cengkareng, Jakarta Barat 11730"
+  },
+  "14": {
+    "name": "Asuransi Multi Artha Guna",
+    "sector": "Finance and business consultant",
+    "map": "location3.png",
+    "address": "Jl. Kejayaan No. 24<br>Jakarta Barat 11140"
+  },
+  "15": {
+    "name": "Asahimas Flat Glass",
+    "sector": "Food, nutraceutical, Pharmaceutical ingredient",
+    "map": "location4.png",
+    "address": "Grogol Permai Office Complex Block F No. 7-8<br>Jl. Prof. Dr. Latumenten No. 19, Grogol<br>Jakarta Barat 11460"
+  },
+  "16": {
+    "name": "Sumber Alfaria Trijaya",
+    "sector": "General supplier, Tools, electric control equipment, hardware",
+    "map": "location1.png",
+    "address": "Santiago Complex, Jl. KH. Moh Mansyur No. 202-E<br>Jakarta Barat 11210"
+  },
+  "17": {
+    "name": "Pacific Strategic Financial",
+    "sector": "Human resource consultant, Outsourcing and recruitment",
+    "map": "location1.png",
+    "address": "Jl. Karang Anyar F No. 10/35<br>Jakarta Pusat 10740"
+  },
+  "18": {
+    "name": "Asiaplast Industries",
+    "sector": "Land surveyor, Mapping and topogrammetry service, Marking off land registrar",
+    "map": "location2.png",
+    "address": "Kota Harapan Indah Complex Block SN 5.6 No. 18<br>Jakarta Utara 17131"
+  },
+  "19": {
+    "name": "Agung Podomoro Land",
+    "sector": "Agronomical engineering service",
+    "map": "location1.png",
+    "address": "Nirwana Sunter Asri Tahap II Complex Block A No. 69<br>Jl. Paradise Raya No. 22 Sunter Agung<br>Jakarta Utara 14350"
+  },
+  "20": {
+    "name": "Arpeni Pratama Ocean Line",
+    "sector": "Air compressor part and service",
+    "map": "location2.png",
+    "address": "Puri Mutiara Complex Block A No. 23-25<br>Jl. Griya Utama, Sunter Agung<br>Jakarta Utara 14350"
+  },
+  "21": {
+    "name": "Bank Ekonomi Raharja",
+    "sector": "Boiler spareparts and maintenance",
+    "map": "location3.png",
+    "address": "Plaza Pasific Office Centre Block A-3 No. 53-55<br>Jl. Boulevard Barat Raya, Kelapa Gading<br>Jakarta Utara 14240"
+  },
+  "22": {
+    "name": "Bank Internasional Indonesia",
+    "sector": "Building and civil construction, Construction equipment, Readymix and precast concrete",
+    "map": "location4.png",
+    "address": "Kota Harapan Indah Complex Block SN 5.6 No. 18<br>Jakarta Utara 17131"
+  },
+  "23": {
+    "name": "Bumi Serpong Damai",
+    "sector": "Catering service for ship and aircraft",
+    "map": "location1.png",
+    "address": "Jl. Bandengan Utara No. 27-29 Block A-15<br>Pekojan – Tambora<br>Jakarta Barat 11240"
+  },
+  "24": {
+    "name": "Buana Listya Tama ",
+    "sector": "Computer hardware and maintenance service, Printing equipment, toner",
+    "map": "location1.png",
+    "address": "Ruko Roxy Mas Complex Block D-5 No. 17<br>Jl. KH. Hasyim Ashari No. 125<br>Jakarta Pusat 10150"
+  }
+}

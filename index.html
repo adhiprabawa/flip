@@ -1,0 +1,97 @@
+<html>
+	<head>
+		<title>Flip Animation</title>
+		<link href="flip.css" rel="stylesheet">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script>
+			var box = true,
+			cmp = Array(),
+			per_page = 12,
+			current = 0,
+			split = 6;
+
+			$.ajax({
+				url : 'companies.json',
+				async : false,
+				dataType : 'json',
+				success : function(data) {
+					$.each(data, function(k, v) {
+						
+						cmp.push(v);
+						//console.log(v);
+					});
+				}
+			});
+			
+			var limitation = (cmp.length / per_page);
+			
+			console.log(limitation);
+			
+			function html() {
+				$("#cmp").html("");
+				var curr_page = current * per_page;
+				var push_page = curr_page + split;
+				//console.log(curr_page);
+				for ( i = curr_page; i < push_page; i++) {
+						var j = i + split;
+						var flip = cmp[i].name;
+						var flop = cmp[j].name;
+						console.log(i);
+						console.log(j);
+						var html = '<div class="cube"><div class="flippety"><h3>' + flip + '</h3></div><div class="flop"><h3>' + flop + '</h3></div></div>';
+						$("#cmp").append(html);
+				}
+
+						cube();
+			}
+			
+			function init(){
+				html();
+			}
+			
+			function cube() {
+				$(".cube").each(function(k, v) {
+					$(this).attr("id", "data" + k);
+					if (box) {
+						var deg = {
+							"-webkit-transform" : "rotateX(90deg)",
+							"transform" : "rotateX(90deg)"
+						};
+					} else {
+						var deg = {
+							"-webkit-transform" : "rotateX(0deg)",
+							"transform" : "rotateX(0deg)"
+						};
+					}
+					setTimeout(function() {
+						$("#data" + k).css(deg);
+					}, 150 * k);
+				});
+			}
+
+
+			$(document).ready(function() {
+				html();
+				setInterval(function() {
+					//console.log(current);
+					if(current < limitation-1){
+						current++;
+					}
+					else{
+						current = 0;
+					}
+					html();
+					if (box) {
+						box = false;
+					} else {
+						box = true;
+					}
+				}, 1000 * 9);
+			});
+		</script>
+	</head>
+	<body>
+		<div id="cmp"></div>
+
+	</body>
+</html>

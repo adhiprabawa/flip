@@ -1,0 +1,283 @@
+<html>
+	<head>
+		<title>E-Directory Listing</title>
+		<link href="/css/bootstrap.css" rel="stylesheet">
+		<link href="/css/style.css" rel="stylesheet">
+		<link href="/css/simpletextrotator.css" rel="stylesheet">
+
+		<script src="/js/jquery-1.10.2.min.js"></script>
+
+		<script type="text/javascript" src="/js/jquery.simple-text-rotator.js"></script>
+		<script type="text/javascript" src="/js/jquery.flip.js"></script>
+		<script type="text/javascript" src="/js/jquery.flip.min.js"></script>
+
+		<!-- Add fancyBox main JS and CSS files -->
+		<script type="text/javascript" src="/js/jquery.fancybox.js"></script>
+		<link rel="stylesheet" type="text/css" href="/js/jquery.fancybox.css" media="screen" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<script>
+			var splitter = 12;
+			var current = 0;
+			//var companies = "Astra Agro Lestari,Mahaka Media,Asuransi Bina Dana Arta,ABM Investama,Pertamina,Amikom,Matahari,Intel,Asus,AMD,Samsung,Apple,Lenovo,Acer,Toshiba,Fujitsu,Google,Yahoo,Path,Aqua,Ciputra,Starbucks,Paperone,Artha Gading,Ciputra World,Unikom,Binus,Trisakti,Ukrida,Atmajaya,UKDW,ITB,ITS,Airlangga,UPH,Petra,UGM,Sanata Dharma,Sarjana Wiyata,Maxikom,Andy,Sampoerna,Arga Produksi,Danone,Bank Negara Indonesia,Bank Mandiri,Bank Central Asia,CMBNiaga,Bank Panin,Permata Bank,Batik Keris,Dagadu,Telkom,Indosat,Axiss,Sony,Ultrajaya,Sosro,Tirta Investama,Maranatha,BreadTalk,Pepper Lunch,XO Suki,J.CO,Duncin Donuts";
+			//var listCompanies = companies.split(',');
+
+			var listCompanies = Array();
+
+			/*
+			 var sector = Array();
+			 var map = Array();
+			 var address = Array();
+			 */
+
+			var loop = true;
+
+			$.ajax({
+				url : './contents/companies.json',
+				async : false,
+				dataType : 'json',
+				success : function(data) {
+					$.each(data, function(k, v) {
+						listCompanies.push(v);
+						//console.log((v));
+						//console.log(v.name);
+						//console.log(listCompanies);
+
+						//for (var i = 0; i < v.length; i++) {
+						//console.log(v.name[i]);
+						//}
+					});
+				}
+			});
+
+			//for (var i = 0; i < listCompanies.length; i++) {
+			//console.log(listCompanies[i].name);
+			//console.log(listCompanies[i].sector);
+			//console.log(listCompanies[i].map);
+			//}
+
+			//console.log(listCompanies);
+
+			/*
+			 * configuration for fancybox
+			 */
+			$(".fancybox").fancybox({
+				padding : 0,
+				margin : 0,
+				autoSize : false,
+				width : '100%',
+				height : '100%',
+				openEffect : 'elastic',
+				openSpeed : 500
+			});
+
+			/**
+			 * to complete an empty div with empty data
+			 */
+			if (listCompanies.length % splitter != 0) {
+				var emptyCompanies = splitter - (listCompanies.length % splitter);
+				for ( j = 0; j < emptyCompanies; j++) {
+					listCompanies.push({
+						"name" : " ",
+						"sector" : " ",
+						"map" : " ",
+						"address" : " "
+					});
+				}
+			}
+
+			var interval = 3000;
+			var dump_interval = 5000;
+			var limitation = (listCompanies.length / splitter);
+			var showCompanies = [];
+
+			/**
+			 * making div initiation of companies list
+			 */
+			function init() {
+				for (var i = 1; i <= splitter; i++) {
+					$("#companies").append('<div class="fancybox" href="#detail-company"><div id="' + i + '" class="col-md-6 flip"></div></div>');
+					var t = $("div#" + i).height();
+					//console.log(t+"try");
+
+					var s = t / 4;
+					//console.log(s);
+
+					$("div#" + i).css({
+						'padding-top' : s
+					});
+				}
+			}
+
+			/**
+			 * insert companies list to div with fade animation
+			 */
+			function insertCompanies() {
+				var k = 1;
+
+				for (var i = 0; i < showCompanies.length; i++) {( function(i) {
+							setTimeout(function() {
+								var dump = "";
+								//console.log(i);
+								//console.log(showCompanies[i]);
+
+								// url >> $http://lab.smashup.it/flip/
+								console.log(showCompanies[i]);
+								if (showCompanies[i].name != " ") {
+									dump = "dump('" + showCompanies[i].name + "','" + showCompanies[i].sector + "','" + showCompanies[i].map + "','" + showCompanies[i].address + "')";
+									$("#" + k).parent().attr("href", "#detail-company");
+								} else {
+									dump = "";
+									$("#" + k).parent().attr("href", "#");
+								}
+								$("#" + k).flip({
+									direction : 'tb',
+									color : '#000000',
+									content : showCompanies[i].name
+								}).attr("onclick", dump);
+								k += 1;
+							}, 150 * i);
+						}(i));
+				}
+
+			}
+
+			function dump(title, sector, map, address) {
+				loop = false;
+				console.log(loop);
+				//$('.flip').revertFlip();
+				$(".title-company").html(title);
+				$(".sector").html(sector);
+				$(".maping").attr("src", "/images/" + map);
+				$(".address").html(address);
+
+				setInterval(function() {
+					window.location.reload();
+				}, dump_interval);
+			}
+
+			/**
+			 * push companies data to array showCompanies with splitter
+			 */
+			function pushCompanies() {
+
+				for (var i = 0; i < listCompanies.length; i++) {
+					if ((i >= current * splitter) && (i < (current + 1) * splitter)) {
+						showCompanies.push(listCompanies[i]);
+					}
+				}
+			}
+
+			/*
+			 * showing companies detail
+			 */
+
+			$(document).ready(function() {
+				/*
+				var items = [];
+				var dynamicItems = [];
+				var counter = 0;
+				var indicator = 0;
+				var category = 1;
+
+				$.getJSON("/contents/companies.json", function(data) {
+				$.each(data, function(key, val) {
+				//if (counter % 8 == 0) {
+				//indicator += 1;
+				//}
+				//items.push('<div id="' + key + '"class="col-md-12 well category' + indicator + '"><div class="row-flip">' + val + "</div></div>");
+
+				var content = '<li id="' + key + '"><div class="card-front"><h2><b>' + val + '</b></h2></div>' + '</div><div class="card-back"><h2><b>' + val + '</b></h2></div>' + '<!-- Content --><div class="all-content">' + $('#description-listing').html() + '</div></li>';
+				items.push(content);
+				counter += 1;
+				});
+
+				var collections = items;
+				$("<ul/>", {
+				"class" : "content",
+				html : collections.join("")
+				}).appendTo(".responsive");
+
+				dynamicItems = [];
+				for (var k = 0; k < items.length; k++) {
+				if (k > category && k <= category * config.splitter) {
+				dynamicItems.push(items[k]);
+				}
+				}
+
+				// $("<ul/>", {
+				// "class" : "content",
+				// html : dynamicItems.join("")
+				// }).appendTo(".responsive");
+
+				$("#company-listing").hide();
+				}); */
+
+				/**
+				 * called function to create div
+				 */
+				init();
+
+				/**
+				 * called function pushing data to showcompanies array
+				 */
+				pushCompanies();
+
+				/**
+				 * called function to insert coompanies list to div companies class
+				 */
+				insertCompanies();
+
+				setInterval(function() {
+					if (loop) {
+						if (current < limitation) {
+							current++;
+						} else {
+							current = 0;
+						}
+
+						//console.log(current);
+						//console.log(showCompanies);
+
+						showCompanies = [];
+
+						pushCompanies();
+
+						//console.log(showCompanies);
+
+						insertCompanies();
+					}
+				}, interval);
+
+			});
+
+		</script>
+	</head>
+	<body>
+
+		<div id="companies" class="row"></div>
+
+		<div id="detail-company" class="detail" style="display:none;">
+
+			<img class="maping" src="/images/location.jpg" width="600px" height="300px" />
+
+			<br/>
+			<br/>
+			<div class="title-company" style=""></div>
+			<br/>
+			<div class="sector"></div>
+			<br/>
+			<p class="address"></p>
+			<br/>
+			Phone : +62 21 52962011
+			<br/>
+			Fax : +62 21 52962030
+			<br/>
+			Email : corporate@astra.co.id
+			<br/>
+			Twitter : @astra
+		</div>
+
+	</body>
+</html>
