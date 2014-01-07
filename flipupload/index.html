@@ -37,7 +37,7 @@
 					var flop = cmp[j].name;
 					console.log(i);
 					console.log(j);
-					var html = '<div class="cube"><div class="flippety"><h3>' + flip + '</h3></div><div class="flop"><h3>' + flop + '</h3></div></div>';
+					var html = '<div class="cube"><div class="flippety"  onclick="dump()"><h3>' + flip + '</h3></div><div class="flop" onclick="dump()"><h3>' + flop + '</h3></div></div>';
 					$("#cmp").append(html);
 				}
 
