@@ -118,29 +118,5 @@
     "sector": "Air compressor part and service",
     "map": "location2.png",
     "address": "Puri Mutiara Complex Block A No. 23-25<br>Jl. Griya Utama, Sunter Agung<br>Jakarta Utara 14350"
-  },
-  "21": {
-    "name": "Bank Ekonomi Raharja",
-    "sector": "Boiler spareparts and maintenance",
-    "map": "location3.png",
-    "address": "Plaza Pasific Office Centre Block A-3 No. 53-55<br>Jl. Boulevard Barat Raya, Kelapa Gading<br>Jakarta Utara 14240"
-  },
-  "22": {
-    "name": "Bank Internasional Indonesia",
-    "sector": "Building and civil construction, Construction equipment, Readymix and precast concrete",
-    "map": "location4.png",
-    "address": "Kota Harapan Indah Complex Block SN 5.6 No. 18<br>Jakarta Utara 17131"
-  },
-  "23": {
-    "name": "Bumi Serpong Damai",
-    "sector": "Catering service for ship and aircraft",
-    "map": "location1.png",
-    "address": "Jl. Bandengan Utara No. 27-29 Block A-15<br>Pekojan – Tambora<br>Jakarta Barat 11240"
-  },
-  "24": {
-    "name": "Buana Listya Tama ",
-    "sector": "Computer hardware and maintenance service, Printing equipment, toner",
-    "map": "location1.png",
-    "address": "Ruko Roxy Mas Complex Block D-5 No. 17<br>Jl. KH. Hasyim Ashari No. 125<br>Jakarta Pusat 10150"
   }
 }
